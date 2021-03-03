@@ -3,20 +3,26 @@ import numpy as np
 import tensorflow as tf
 from datetime import datetime
 import io
-from flask import Flask,Blueprint,request,render_template,jsonify
-import iotServer.database as db
-from iotNN.plant_predict import main as predict
+from flask import Flask,Blueprint,request,render_template,jsonify, abort
+import Database.db as db
+import sys
+sys.path.append("/Users/xavier/Documents/NTU/CZ4171/Assignment/iotNN/")
+from plant_predict import main as predict
+from jinja2 import TemplateNotFound
 
 
-mod = Blueprint('backend',__name__,template_folder='./FrontEnd',static_folder='./Static')
+predict_blueprint = Blueprint('predict_blueprint',__name__,template_folder='./templates',static_folder='./Static')
 UPLOAD_URL = '20.198.224.77/Static/'
 
 
-@mod.route('/')
-def home():
-    return render_template('index.html')
+@predict_blueprint.route('/')
+def show():
+    try:
+        return render_template('index.html')
+    except TemplateNotFound:
+        abort(404)
 
-@mod.route('/predict' ,methods=['POST'])
+@predict_blueprint.route('/predict' , methods=['POST'])
 def predict():  
      if request.method == 'POST':       
         if 'file' not in request.files:
@@ -39,6 +45,7 @@ def predict():
 
             return jsonify({
                 "status":"success",
+                "title": user_file.filename,
                 "prediction":pred_class,
                 "confidence":score,
                 "upload_time":datetime.now()
