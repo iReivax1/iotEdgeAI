@@ -16,7 +16,8 @@ epochs = 1
 num_classes=3
 class_list = ["bean_rust","angular_leaf_spot","healthy"]
 model_dir = "/Users/xavier/Documents/NTU/CZ4171/Assignment/iotNN/bean_tf2/ibean"
-image_dir = "/Users/xavier/Documents/NTU/CZ4171/Assignment/iotClient/healthy.png"
+# model_dir = "/home/xavi0007/iotNN/bean_tf2/ibean"
+# image_dir = "/Users/xavier/Documents/NTU/CZ4171/Assignment/iotClient/healthy.png"
 
 def load_data(): 
     ds_test, ds_info = tfds.load(
@@ -35,21 +36,24 @@ def preprocess(ds_test, ds_info):
 
 def model_predict(model, input_image_dir):
     # results = model.evaluate(ds_test, verbose=1, batch_size=256)
+
     with tf.device(str(device_name)):
         img = keras.preprocessing.image.load_img(
             input_image_dir, target_size=(500, 500,3)
         )
+        
         img_array = keras.preprocessing.image.img_to_array(img)
         img_array = tf.expand_dims(img_array, 0)
         y_pred = model.predict(img_array)
         score = tf.nn.softmax(y_pred[0])
         print(
-                    "This trojan image most likely belongs to {} with a {:.2f} percent confidence."
+                    "This image most likely belongs to {} with a {:.2f} percent confidence."
                     .format(class_list[np.argmax(score)], 100 * np.max(score))
                 )
-    a = class_list[np.argmax(score)]
-    b = 100 * np.max(score)
-    return a, b
+        a = class_list[np.argmax(score)]
+        b = 100 * np.max(score)
+        
+        return a, b
 
 
 def main(image_dir):
@@ -57,7 +61,8 @@ def main(image_dir):
     # ds_test = preprocess(ds_test,ds_info)
     saved_model = tf.keras.models.load_model(model_dir)
     print("predicting")
-    model_predict(saved_model, image_dir)
+    a,b = model_predict(saved_model, image_dir)
+    return a , b
     # print(f'the model effectiveness is, Loss :[{results[0]}]  Acc : [{results[1]}]')
 
 

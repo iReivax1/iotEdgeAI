@@ -7,7 +7,8 @@ from flask import Flask,Blueprint,request,render_template,jsonify, abort
 import Database.db as db
 import sys
 sys.path.append("/Users/xavier/Documents/NTU/CZ4171/Assignment/iotNN/")
-from plant_predict import main as predict
+# sys.path.append("/home/xavi0007/iotNN")
+from plant_predict import main as predict_main
 from jinja2 import TemplateNotFound
 
 
@@ -33,16 +34,18 @@ def predict():
             return ("404 file not found") 
        
         else:
-            path = os.path.join(os.getcwd()+'\\Static\\'+user_file.filename)
+            path = os.path.join(os.getcwd()+'/Static/'+user_file.filename)
+            print(path)
             user_file.save(path)
-            pred_class, score = predict(path)
-            db.add_new_image(
-                user_file.filename,
-                pred_class,
-                score,
-                datetime.now(),
-                UPLOAD_URL+user_file.filename)
-
+            pred_class, score = predict_main(path)
+            score = str(score)
+            # db.add_new_image(
+            #     user_file.filename,
+            #     pred_class,
+            #     score,
+            #     datetime.now(),
+            #     UPLOAD_URL+user_file.filename)
+            print(user_file.filename,pred_class, score, datetime.now())
             return jsonify({
                 "status":"success",
                 "title": user_file.filename,

@@ -138,7 +138,8 @@ class _UploadState extends State<Upload> {
         new http.ByteStream(DelegatingStream.typed(imageFile.openRead()));
     var length = await imageFile.length();
 
-    var uri = Uri.parse('20.198.224.77/predict');
+    // var uri = Uri.parse('http://20.198.224.77/predict');
+    var uri = Uri.parse('http://127.0.0.1/predict');
     print("connection established.");
     var request = new http.MultipartRequest("POST", uri);
     var multipartFile = new http.MultipartFile('file', stream, length,
@@ -150,6 +151,7 @@ class _UploadState extends State<Upload> {
     if (response.statusCode == 201 || response.statusCode == 200) {
       // If the server did return a 201 CREATED response,
       // then parse the JSON.
+      print("Post request responded");
       return Prediction.fromJson(jsonDecode(response.body));
     } else {
       throw Exception('Failed to load prediction');
