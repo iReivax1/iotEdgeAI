@@ -1,0 +1,183 @@
+tfds.core.DatasetInfo(
+    name='beans',
+    version=0.1.0,
+    description='Beans is a dataset of images of beans taken in the field using smartphone
+cameras. It consists of 3 classes: 2 disease classes and the healthy class.
+Diseases depicted include Angular Leaf Spot and Bean Rust. Data was annotated
+by experts from the National Crops Resources Research Institute (NaCRRI) in
+Uganda and collected by the Makerere AI research lab.',
+    homepage='https://github.com/AI-Lab-Makerere/ibean/',
+    features=FeaturesDict({
+        'image': Image(shape=(500, 500, 3), dtype=tf.uint8),
+        'label': ClassLabel(shape=(), dtype=tf.int64, num_classes=3),
+    }),
+    total_num_examples=1295,
+    splits={
+        'test': 128,
+        'train': 1034,
+        'validation': 133,
+    },
+    supervised_keys=('image', 'label'),
+    citation="""@ONLINE {beansdata,
+        author="Makerere AI Lab",
+        title="Bean disease dataset",
+        month="January",
+        year="2020",
+        url="https://github.com/AI-Lab-Makerere/ibean/"
+    }""",
+    redistribution_info=,
+)
+
+Learning rate:  0.001
+Epoch 1/50
+Learning rate:  0.001
+17/17 [==============================] - 17s 813ms/step - loss: 121.4742 - accuracy: 0.3847 - val_loss: 29.0290 - val_accuracy: 0.3308
+Epoch 2/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 6.9101 - accuracy: 0.5884 - val_loss: 15.4387 - val_accuracy: 0.3459
+Epoch 3/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 787ms/step - loss: 3.3937 - accuracy: 0.5892 - val_loss: 5.6968 - val_accuracy: 0.4060
+Epoch 4/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 784ms/step - loss: 2.2349 - accuracy: 0.6663 - val_loss: 3.1096 - val_accuracy: 0.4887
+Epoch 5/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 781ms/step - loss: 1.5644 - accuracy: 0.6815 - val_loss: 2.9700 - val_accuracy: 0.4436
+Epoch 6/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 781ms/step - loss: 1.4189 - accuracy: 0.6613 - val_loss: 2.1415 - val_accuracy: 0.5113
+Epoch 7/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 778ms/step - loss: 1.3065 - accuracy: 0.6814 - val_loss: 1.8276 - val_accuracy: 0.5489
+Epoch 8/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 779ms/step - loss: 1.3165 - accuracy: 0.6800 - val_loss: 1.2491 - val_accuracy: 0.6466
+Epoch 9/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 781ms/step - loss: 1.0504 - accuracy: 0.7132 - val_loss: 1.2177 - val_accuracy: 0.6692
+Epoch 10/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 0.8655 - accuracy: 0.7080 - val_loss: 1.3589 - val_accuracy: 0.6917
+Epoch 11/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 790ms/step - loss: 0.7404 - accuracy: 0.7517 - val_loss: 1.9064 - val_accuracy: 0.5489
+Epoch 12/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 791ms/step - loss: 0.9108 - accuracy: 0.6955 - val_loss: 1.2064 - val_accuracy: 0.6541
+Epoch 13/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 0.7291 - accuracy: 0.7656 - val_loss: 1.2399 - val_accuracy: 0.6015
+Epoch 14/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 781ms/step - loss: 0.6898 - accuracy: 0.7600 - val_loss: 0.9958 - val_accuracy: 0.7368
+Epoch 15/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 0.6928 - accuracy: 0.7738 - val_loss: 0.9229 - val_accuracy: 0.6842
+Epoch 16/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 780ms/step - loss: 0.5870 - accuracy: 0.8017 - val_loss: 1.3385 - val_accuracy: 0.6541
+Epoch 17/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 782ms/step - loss: 0.6951 - accuracy: 0.7684 - val_loss: 2.4610 - val_accuracy: 0.5564
+Epoch 18/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 781ms/step - loss: 0.6051 - accuracy: 0.7649 - val_loss: 3.0244 - val_accuracy: 0.5038
+Epoch 19/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 0.5366 - accuracy: 0.7879 - val_loss: 3.3626 - val_accuracy: 0.4662
+Epoch 20/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 786ms/step - loss: 0.5163 - accuracy: 0.8149 - val_loss: 1.1026 - val_accuracy: 0.6917
+Epoch 21/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 785ms/step - loss: 0.5077 - accuracy: 0.7897 - val_loss: 2.4473 - val_accuracy: 0.5188
+Epoch 22/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 0.5891 - accuracy: 0.7989 - val_loss: 1.6811 - val_accuracy: 0.6015
+Epoch 23/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 781ms/step - loss: 0.4414 - accuracy: 0.8383 - val_loss: 0.6319 - val_accuracy: 0.7970
+Epoch 24/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 786ms/step - loss: 0.4799 - accuracy: 0.8139 - val_loss: 0.9391 - val_accuracy: 0.6992
+Epoch 25/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 784ms/step - loss: 0.5058 - accuracy: 0.8033 - val_loss: 2.1767 - val_accuracy: 0.5263
+Epoch 26/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 0.4449 - accuracy: 0.8226 - val_loss: 1.1378 - val_accuracy: 0.6992
+Epoch 27/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 779ms/step - loss: 0.4298 - accuracy: 0.8346 - val_loss: 2.5306 - val_accuracy: 0.5338
+Epoch 28/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 0.5405 - accuracy: 0.8040 - val_loss: 2.8682 - val_accuracy: 0.5188
+Epoch 29/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 781ms/step - loss: 0.4496 - accuracy: 0.8248 - val_loss: 0.8412 - val_accuracy: 0.7820
+Epoch 30/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 791ms/step - loss: 0.4338 - accuracy: 0.8151 - val_loss: 0.7603 - val_accuracy: 0.7970
+Epoch 31/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 0.4507 - accuracy: 0.8232 - val_loss: 0.7025 - val_accuracy: 0.7970
+Epoch 32/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 788ms/step - loss: 0.4697 - accuracy: 0.8107 - val_loss: 0.7993 - val_accuracy: 0.6992
+Epoch 33/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 785ms/step - loss: 0.4945 - accuracy: 0.8301 - val_loss: 1.0714 - val_accuracy: 0.7368
+Epoch 34/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 784ms/step - loss: 0.4223 - accuracy: 0.8396 - val_loss: 0.7494 - val_accuracy: 0.7970
+Epoch 35/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 788ms/step - loss: 0.4130 - accuracy: 0.8265 - val_loss: 0.6279 - val_accuracy: 0.7594
+Epoch 36/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 786ms/step - loss: 0.3969 - accuracy: 0.8626 - val_loss: 1.5889 - val_accuracy: 0.6541
+Epoch 37/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 787ms/step - loss: 0.3740 - accuracy: 0.8411 - val_loss: 1.0545 - val_accuracy: 0.6767
+Epoch 38/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 783ms/step - loss: 0.3979 - accuracy: 0.8511 - val_loss: 1.2415 - val_accuracy: 0.7218
+Epoch 39/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 788ms/step - loss: 0.4097 - accuracy: 0.8509 - val_loss: 1.3164 - val_accuracy: 0.6917
+Epoch 40/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 790ms/step - loss: 0.3688 - accuracy: 0.8536 - val_loss: 1.3469 - val_accuracy: 0.6992
+Epoch 41/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 790ms/step - loss: 0.3464 - accuracy: 0.8651 - val_loss: 0.6241 - val_accuracy: 0.8195
+Epoch 42/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 790ms/step - loss: 0.3374 - accuracy: 0.8694 - val_loss: 1.3537 - val_accuracy: 0.6692
+Epoch 43/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 791ms/step - loss: 0.4263 - accuracy: 0.8525 - val_loss: 0.7254 - val_accuracy: 0.8271
+Epoch 44/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 789ms/step - loss: 0.3297 - accuracy: 0.8731 - val_loss: 0.8152 - val_accuracy: 0.7895
+Epoch 45/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 789ms/step - loss: 0.3699 - accuracy: 0.8539 - val_loss: 0.7902 - val_accuracy: 0.7970
+Epoch 46/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 788ms/step - loss: 0.4888 - accuracy: 0.8242 - val_loss: 1.2782 - val_accuracy: 0.6316
+Epoch 47/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 788ms/step - loss: 0.2795 - accuracy: 0.8891 - val_loss: 2.9794 - val_accuracy: 0.5489
+Epoch 48/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 787ms/step - loss: 0.3161 - accuracy: 0.8769 - val_loss: 0.8358 - val_accuracy: 0.7218
+Epoch 49/50
+Learning rate:  0.001
+17/17 [==============================] - 14s 795ms/step - loss: 0.3360 - accuracy: 0.8587 - val_loss: 0.2783 - val_accuracy: 0.8797
+Epoch 50/50
+Learning rate:  0.001
+17/17 [==============================] - 13s 788ms/step - loss: 0.2952 - accuracy: 0.8913 - val_loss: 0.3125 - val_accuracy: 0.8947
+INFO:tensorflow:Assets written to: /content/drive/MyDrive/Colab Notebooks/bean_tf2/ibean/assets
+INFO:tensorflow:Assets written to: /content/drive/MyDrive/Colab Notebooks/bean_tf2/ibean/assets
