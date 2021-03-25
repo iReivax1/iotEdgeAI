@@ -27,3 +27,5 @@ sudo su
 source ./venv/bin/activate
 cd iotServer
 python3 server.py
+
+Remember to change IP address and directories in server.py, predict_api.py, plant_predict.py
